@@ -3,7 +3,6 @@ import re
 
 globalConcelhosCount = []
 obrasConcelhosCount = []
-
 def printGlobalCount():
     for concelho in globalConcelhosCount:
         if concelho[1] > 0:
@@ -37,7 +36,7 @@ def countLocations(title,line):
     for concelho in globalConcelhosCount:
         if checkIfConcelhoOnLine(concelho,line):
             concelho[1] += 1
-            # obra-location count
+            # obra-location-count
             for obra in obrasConcelhosCount:
                 obraTitle = obra[0]
                 if obraTitle == title:
@@ -46,7 +45,6 @@ def countLocations(title,line):
                     count = 0
                     for obraConcelho in obraConcelhos:
                         if obraConcelho[0] == concelho[0]:
-                            # might be nice to print line number on console to check it out later
                             obra[1][count][1] += 1
                             print concelho[0] + " found in " + title + " " + str(obra[1][count][1]) + " time" + ("s." if obra[1][count][1] > 1 else ".")
                             # uncomment next line to see how things are going
@@ -95,13 +93,16 @@ def main():
 if __name__ == "__main__":
     main()
 
-    def getCount(item):
-        return item[1]
-    globalConcelhosCount = sorted(globalConcelhosCount, key=getCount)
-    printGlobalCount()
+    print "Saving matrix..."
     file = open("matrizLocalizacao.csv","w")
     header = "obra"
     for concelho in globalConcelhosCount:
         header += "," + concelho[0]
     file.write(header + "\n")
-    printMatrix()
+    file.close()
+    print "Done"
+
+    def getCount(item):
+        return item[1]
+    globalConcelhosCount = sorted(globalConcelhosCount, key=getCount)
+    printGlobalCount()
