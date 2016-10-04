@@ -9,7 +9,7 @@ Pasta: Pubs - colocar livros que vão ser tratados pelo script
 
 Convém que quando se corre este script se subtraia a lista anterior, uma vez que esta pode ser indo corrigida.
 
-Step by Step:
+### Step by Step
 1. Download de todos os livros do Projecto Adamastor
  * (ou) usando o plugin DownThem All para Firefox
  * (ou) usando o script (ou os livros já descarregados) [adamaSHtor](https://github.com/marado/adamaSHtor)
