@@ -1,8 +1,11 @@
+#!/usr/bin/env python
+
 import os
 import re
 import sys
 
 # configuration
+# epubsdir = "../adamaSHtor/books/epub/"
 epubsdir = "pubs/"
 
 globalConcelhosCount = []
@@ -98,12 +101,14 @@ def main():
     for file in os.listdir(epubsdir):
         if file.endswith(".epub"):
             # convert to txt and open it
-            os.system('epub2txt.py "'+epubsdir+file+'"')
-            livro = open(epubsdir+file.replace("epub","txt"),"r")
-            title = file.replace(".epub","")
-            print "Analyzing " + title + " ("+str(bookNumber+1)+")"
-            [countLocations(title, line) for line in livro]
-            bookNumber += 1
+            if os.system('./epub2txt.py "'+epubsdir+file+'"') != 0:
+                print "Failed to convert "+epubsdir+file+" into a text file."
+            else:
+                livro = open(epubsdir+file.replace("epub","txt"),"r")
+                title = file.replace(".epub","")
+                print "Analyzing " + title + " ("+str(bookNumber+1)+")"
+                [countLocations(title, line) for line in livro]
+                bookNumber += 1
 
 if __name__ == "__main__":
     main()
