@@ -1,5 +1,9 @@
 import os
 import re
+import sys
+
+# configuration
+epubsdir = "pubs/"
 
 globalConcelhosCount = []
 obrasConcelhosCount = []
@@ -69,22 +73,33 @@ def setLocations():
     return
 
 def getBooks():
-    # ideally we would scrape the books from adamastor but for now lets assume they are already in pubs/
-    for file in os.listdir("pubs/"):
+    # ideally we would scrape the books from adamastor but for now lets assume
+    # they are already in epubsdir
+    try:
+        os.stat(epubsdir)
+    except OSError, e:
+        print "The epubs directory ("+epubsdir+") wasn't found."
+        print "Please create it, and drop the epub files there."
+        print "If the directory has another name, you can change in the top of this script."
+        raise
+    for file in os.listdir(epubsdir):
         if file.endswith(".epub"):
             title = file.replace(".epub","")
             obrasConcelhosCount.append([title,[]])
     return
 
 def main():
-    getBooks()
+    try:
+        getBooks()
+    except OSError, e:
+        sys.exit()
     setLocations()
     bookNumber = 0
-    for file in os.listdir("pubs/"):
+    for file in os.listdir(epubsdir):
         if file.endswith(".epub"):
             # convert to txt and open it
-            os.system('epub2txt.py "pubs/'+file+'"')
-            livro = open('pubs/'+file.replace("epub","txt"),"r")
+            os.system('epub2txt.py "'+epubsdir+file+'"')
+            livro = open(epubsdir+file.replace("epub","txt"),"r")
             title = file.replace(".epub","")
             print "Analyzing " + title + " ("+str(bookNumber+1)+")"
             [countLocations(title, line) for line in livro]
