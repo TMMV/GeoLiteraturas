@@ -20,6 +20,7 @@ def printMatrix():
         line = obra[0]
         for concelho in obra[1]:
             line += "," + str(concelho[1])
+        print(line + "\n")
         file.write(line + "\n")
 
 def contains(small, big):
@@ -119,6 +120,7 @@ if __name__ == "__main__":
     for concelho in globalConcelhosCount:
         header += "," + concelho[0]
     file.write(header + "\n")
+    printMatrix()
     file.close()
     print "Done"
 
