@@ -5,7 +5,7 @@ import re
 import sys
 
 # configuration
-# epubsdir = "../adamaSHtor/books/epub/"
+# epubsdir = "../adamaSHtor/books/epubs/"
 epubsdir = "pubs/"
 
 globalConcelhosCount = []
