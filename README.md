@@ -3,9 +3,8 @@
 O objectivo deste projecto é explorar o texto nas suas vertentes geográficas, extraindo automaticamente as referências a locais de um corpus de texto.
 
 ## Usar
-Pasta: Pubs - colocar livros que vão ser tratados pelo script
-
-`python locationCounter.py`: cria uma `matriz.csv` para cada obra ocorrências de cada concelho (eventualmente pode imprimir na consola o total de cada concelho)
+* Colocar os livros que vão ser tratados pelo script na pasta `pubs`;
+* `python locationCounter.py` - cria uma `matriz.csv` para cada obra ocorrências de cada concelho (eventualmente pode imprimir na consola o total de cada concelho)
 
 Convém que quando se corre este script se subtraia a lista anterior, uma vez que esta pode ser indo corrigida.
 
