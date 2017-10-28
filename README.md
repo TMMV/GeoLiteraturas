@@ -41,29 +41,31 @@ Convém que quando se corre este script se subtraia a lista anterior, uma vez qu
 
 ## Lista de Autores
 ```
-Mário de Sá-Carneiro
-Bernardo Guimarães
-Eça de Queirós
-Camilo Castelo Branco
-Fialho de Almeida
-H. Rider Haggard
-Antero de Quental
-Florbela Espanca
-Camilo Pessanha
-João da Câmara
-Machado de Assis
 Alexandre Herculano
 Almeida Garrett
-William Shakespeare
-Melo de Matos
+Álvaro do Carvalhal
+Ana de Castro Osório
+Antero de Quental
+António Nobre
+Augusto dos Anjos
+Bernardo Guimarães
+Camilo Castelo Branco
+Camilo Pessanha
 Cândido de Figueiredo
-Fernando Pessoa
+Cesário Verde
 Eça de Queirós
 Eça de Queirós e Ramalho Ortigão
-Cesário Verde
-Álvaro do Carvalhal
-Venceslau de Morais
+Émile Souvestre
+Fernando Pessoa
+Fialho de Almeida
+Florbela Espanca
 Guerra Junqueiro
-Ana de Castro Osório
-António Nobre
+H. Rider Haggard
+João da Câmara
+Machado de Assis
+Mário de Sá-Carneiro
+Melo de Matos
+Raul Brandão
+Venceslau de Morais
+William Shakespeare
 ```
